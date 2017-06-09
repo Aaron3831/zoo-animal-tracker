@@ -54,3 +54,7 @@ Before running the tests make sure you are serving the app via `ng serve`.
     7. Sex(string)
     8. Likes(string)
     9. dislikes(string)
+
+3. Future features
+  * Add deeper pipe filter
+  * Set timers for when animals need to be fed
