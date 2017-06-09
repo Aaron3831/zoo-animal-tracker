@@ -1,0 +1,13 @@
+<select (change)="onChange($event.target.value)">
+  <option value="allAnimals">All Animals</option>
+  <option value="oldAnimals">Old Animals</option>
+  <option value="youngAnimals" selected="selected">Young Animals</option>
+</select>
+
+<ul>
+  <li [class]="difficultyColor(currentAnimal)" (click)="haveCooked(currentAnimal)" *ngFor="let currentAnimal of childAnimalList | completeness:filterByCompleteness">{{currentAnimal.title}} {{currentAnimal.ingredients}} {{currentAnimal.directions}} {{currentAnimal.difficulty}}
+    <input *ngIf="currentAnimal.fed === true" type="checkbox" checked (click)="toggleCooked(currentAnimal, false)"/>
+    <input *ngIf="currentAnimal.fed === false" type="checkbox" (click)="toggleCooked(currentAnimal, true)"/>
+    <button (click)="editButtonHasBeenClicked(currentAnimal)">Edit!</button>
+  </li>
+</ul>
