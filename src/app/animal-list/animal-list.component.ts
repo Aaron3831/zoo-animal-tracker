@@ -19,6 +19,10 @@ export class AnimalListComponent implements OnInit{
   onChange(optionFromMenu) {
     this.filterByAge = optionFromMenu;
   }
+
+  toggleFed(clickedAnimal: Animal, setCompleteness: boolean) {
+     clickedAnimal.fed = setCompleteness;
+    }
   haveFed(clickedAnimal: Animal) {
     console.log(clickedAnimal)
    if(clickedAnimal.fed === true) {
@@ -27,7 +31,6 @@ export class AnimalListComponent implements OnInit{
      alert("This animal has not been fed today, go get some food!");
    }
  }
-
 
    constructor() { }
 
