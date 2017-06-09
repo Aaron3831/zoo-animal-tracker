@@ -4,10 +4,17 @@
   <option value="youngAnimals" selected="selected">Young Animals</option>
 </select>
 
-<ul>
-  <li (click)="haveFed(currentAnimal)" *ngFor="let currentAnimal of childAnimalList | age:filterByAge">{{currentAnimal.species}} {{currentAnimal.name}} {{currentAnimal.age}} {{currentAnimal.diet}} {{currentAnimal.location}} {{currentAnimal.caretakeramount}} {{currentAnimal.sex}} {{currentAnimal.likes}} {{currentAnimal.dislikes}}
+<ul (click)="haveFed(currentAnimal)" *ngFor="let currentAnimal of childAnimalList | age:filterByAge">
+  <li>Species: {{currentAnimal.species}}</li>
+  <li>Name: {{currentAnimal.name}}</li>
+  <li>Age: {{currentAnimal.age}}</li>
+  <li>Diet: {{currentAnimal.diet}}</li>
+  <li>Location: {{currentAnimal.location}}</li>
+  <li>Number of Caretakers: {{currentAnimal.caretakeramount}}</li>
+  <li>Gender: {{currentAnimal.sex}}</li>
+  <li>Hobbies and Likes: {{currentAnimal.likes}}</li>
+  <li>Dislikes: {{currentAnimal.dislikes}}</li>
     <input *ngIf="currentAnimal.fed === true" type="checkbox" checked (click)="toggleFed(currentAnimal, false)"/>
     <input *ngIf="currentAnimal.fed === false" type="checkbox" (click)="toggleFed(currentAnimal, true)"/>
     <button (click)="editButtonHasBeenClicked(currentAnimal)">Edit!</button>
-  </li>
 </ul>
