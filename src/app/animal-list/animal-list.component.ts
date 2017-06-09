@@ -1,19 +1,3 @@
-import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-animal-list',
-  templateUrl: './animal-list.component.html',
-  styleUrls: ['./animal-list.component.css']
-})
-export class AnimalListComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
-
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Animal } from '../animal.model';
 
@@ -35,18 +19,7 @@ export class AnimalListComponent implements OnInit{
   onChange(optionFromMenu) {
     this.filterByAge = optionFromMenu;
   }
-
-  difficultyColor(currentAnimal){
-    if (currentAnimal.difficulty === 3){
-      return "bg-danger";
-    } else if (currentAnimal.difficulty === 2) {
-      return  "bg-warning";
-    } else {
-      return "bg-success";
-    }
-  }
-
-  haveCooked(clickedAnimal: Animal) {
+  haveFed(clickedAnimal: Animal) {
     console.log(clickedAnimal)
    if(clickedAnimal.fed === true) {
      alert("This animal has been fed!");

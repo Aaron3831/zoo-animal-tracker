@@ -5,9 +5,9 @@
 </select>
 
 <ul>
-  <li [class]="difficultyColor(currentAnimal)" (click)="haveCooked(currentAnimal)" *ngFor="let currentAnimal of childAnimalList | completeness:filterByCompleteness">{{currentAnimal.title}} {{currentAnimal.ingredients}} {{currentAnimal.directions}} {{currentAnimal.difficulty}}
-    <input *ngIf="currentAnimal.fed === true" type="checkbox" checked (click)="toggleCooked(currentAnimal, false)"/>
-    <input *ngIf="currentAnimal.fed === false" type="checkbox" (click)="toggleCooked(currentAnimal, true)"/>
+  <li (click)="haveFed(currentAnimal)" *ngFor="let currentAnimal of childAnimalList | age:filterByAge">{{currentAnimal.species}} {{currentAnimal.name}} {{currentAnimal.age}} {{currentAnimal.diet}} {{currentAnimal.location}} {{currentAnimal.caretakeramount}} {{currentAnimal.sex}} {{currentAnimal.likes}} {{currentAnimal.dislikes}}
+    <input *ngIf="currentAnimal.fed === true" type="checkbox" checked (click)="toggleFed(currentAnimal, false)"/>
+    <input *ngIf="currentAnimal.fed === false" type="checkbox" (click)="toggleFed(currentAnimal, true)"/>
     <button (click)="editButtonHasBeenClicked(currentAnimal)">Edit!</button>
   </li>
 </ul>

@@ -1,0 +1,40 @@
+<div *ngIf="childSelectedAnimal">
+  <h4>Edit Animal</h4>
+  <br>
+  <label>Species: </label>
+  <input type="text" [(ngModel)]="childSelectedAnimal.species">
+  <br>
+  <label>Name: </label>
+  <input type="text" [(ngModel)]="childSelectedAnimal.name">
+  <br>
+  <label>Age: </label>
+  <input type="number" [(ngModel)]="childSelectedAnimal.age">
+  <br>
+  <label>Diet: </label>
+  <input type="text" [(ngModel)]="childSelectedAnimal.diet">
+  <br>
+  <label>Location: </label>
+  <input type="text" [(ngModel)]="childSelectedAnimal.location">
+  <br>
+  <label>Number of Caretakers: </label>
+  <input type="number" [(ngModel)]="childSelectedAnimal.caretakeramount">
+  <br>
+  <label>Sex: </label>
+  <input type="text" [(ngModel)]="childSelectedAnimal.sex">
+  <br>
+  <label>Likes: </label>
+  <input type="text" [(ngModel)]="childSelectedAnimal.likes">
+  <br>
+  <label>Dislikes: </label>
+  <input type="text" [(ngModel)]="childSelectedAnimal.dislikes">
+
+  <div>
+    <label>Have you fed this animal today?</label>
+    <select [(ngModel)]='childSelectedAnimal.fed'>
+      <option *ngFor='let childSelectedAnimal of fedStatus' [value]=childSelectedAnimal.value>
+      {{childSelectedAnimal.display}}
+      </option>
+    </select>
+  </div>
+  <button (click)="fedButtonClicked()">Already Fed</button>
+</div>
