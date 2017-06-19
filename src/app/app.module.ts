@@ -7,7 +7,6 @@ import { AnimalListComponent } from './animal-list/animal-list.component';
 import { NewAnimalComponent } from './new-animal/new-animal.component';
 import { EditAnimalComponent } from './edit-animal/edit-animal.component';
 import { FormsModule }  from '@angular/forms';
-import { FedPipe } from './fed.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,6 @@ import { FedPipe } from './fed.pipe';
     AnimalListComponent,
     NewAnimalComponent,
     EditAnimalComponent,
-    FedPipe
   ],
   imports: [
     BrowserModule,
